@@ -23,4 +23,7 @@ public class Paladin extends Personnage implements Combat, Soin {
 			System.exit(0);
 		}
 	}
+	public String toString() {
+		return (super.getNom() + "(Paladin)\n" + "PV: " + super.getPV() + "\n" + "points de soin: " + this.soin + "\n" + "points d'attaque: " + this.attaque);
+	}
 }
