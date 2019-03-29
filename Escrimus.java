@@ -1,19 +1,20 @@
-public class Escrimus extends Guerrier{
+public class Escrimus extends Guerrier implements ICombat {
 	public Escrimus(String nom) {
 		super(nom, 15);
 	}
+	/*cobattre avec le personnage objet*/
 	public void combattre(Personnage objet) {
-		System.out.println(super.getNom() + " attaque " + objet.getNom());
-		if(Math.abs(super.getDistance() - objet.getDistance()) <= 10)
-			super.setAttaque(20);
+		//System.out.println(this.getNom() + " attaque " + objet.getNom());
+		if(Math.abs(this.getDistance() - objet.getDistance()) <= 10)
+			this.setAttaque(20);
 		else
-			super.setAttaque(15);
+			this.setAttaque(15);
 		try{
-			objet.pertePV(super.getAttaque());
+			objet.pertePV(this.getAttaque());
 		}
-		catch(Exception e) {
+		catch(PVException e) {
 			System.out.println(e.getMessage());
-			System.exit(0);
+			//System.exit(0);
 		}
 	}
 }

@@ -1,3 +1,3 @@
-public interface Soin {
+public interface ISoin {
 	void soigner(Personnage objet);
 }

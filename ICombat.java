@@ -1,3 +1,3 @@
-public interface Combat {
+public interface ICombat {
 	void combattre(Personnage objet);
 }

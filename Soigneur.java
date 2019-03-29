@@ -1,4 +1,4 @@
-public class Soigneur extends Personnage implements Soin {
+public class Soigneur extends Personnage implements ISoin {
 	private int soin;
 
 	public Soigneur(String nom, int soin) {
@@ -6,13 +6,13 @@ public class Soigneur extends Personnage implements Soin {
 		this.soin = soin;
 	}
 	public String allInfo() {
-		return ("Soigneur " + super.getNom() + ":" + "PV: " + super.getPV() + "/" + super.getLimitePV() + " Soin: " + soin + " distance: " + super.getDistance());
+		return ("Soigneur " + this.getNom() + ":" + "PV: " + this.getPV() + "/" + this.getLimitePV() + " Soin: " + soin + " distance: " + this.getDistance());
 	}
 	public void soigner(Personnage objet){
-		System.out.println(super.getNom() + " soigne " + objet.getNom());
+		//System.out.println(this.getNom() + " soigne " + objet.getNom());
 		objet.gainPV(soin);
 	}
 	public String toString() {
-		return (super.getNom() + "(Soigneur)\n" + "PV: " + super.getPV() + "\n" + "points de soin: " + this.soin);
+		return (this.getNom() + "(Soigneur)\n" + "PV: " + this.getPV() + "\n" + "points de soin: " + this.soin);
 	}
 }
